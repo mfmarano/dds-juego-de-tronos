@@ -1,5 +1,6 @@
-import got.Lugar;
+import javax.persistence.Entity;
 
+@Entity
 public class Castillo extends Lugar {
   private int cantidadTorres;
   private int cantidadMurallas;
@@ -7,5 +8,9 @@ public class Castillo extends Lugar {
   public Castillo(int cantidadTorres, int cantidadMurallas) {
     this.cantidadTorres = cantidadTorres;
     this.cantidadMurallas = cantidadMurallas;
+  }
+
+  public Castillo() {
+
   }
 }

@@ -8,6 +8,9 @@
   <persistence-unit name="simple-persistence-unit" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+    <class>Castillo</class>
+    <class>Ciudad</class>
+    <class>Lugar</class>
 
     <properties>
       <property name="hibernate.archive.autodetection" value="class"/>
