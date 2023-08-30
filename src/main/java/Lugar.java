@@ -20,4 +20,8 @@ public class Lugar {
     return nombre;
   }
 
+  public int getPoblacion() {
+    return poblacion;
+  }
+
 }

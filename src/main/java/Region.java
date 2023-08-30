@@ -40,6 +40,7 @@ public class Region {
   }
 
   public int poblacionTotal() {
-    return lugares.size();
+    return lugares.stream().mapToInt(Lugar::getPoblacion).sum();
   }
+
 }
