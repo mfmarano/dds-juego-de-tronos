@@ -1,0 +1,67 @@
+@startuml
+
+hide empty members
+hide circle
+
+entity "Region" as region {
+  id: bigint
+  --
+  nombre: varchar(255)
+  casaPrincipal_id: bigint (fk)
+}
+entity "Lugar (joined)" as lugar {
+  id: bigint
+  --
+  anioFundacion: int
+  nombre: varchar(255)
+  poblacion: int
+}
+entity "Region_Lugar" as region_lugar {
+  Region_id: bigint (fk)
+  Lugares_id: bigint (fk)
+}
+region ||-r-o{ region_lugar
+region_lugar }o-|| lugar
+entity "Castillo" as castillo {
+  id: bigint (fk)
+  --
+  cantidadMurallas: int
+  cantidadTorres: int
+}
+lugar ||--o| castillo
+entity "Ciudad" as ciudad {
+  id: bigint (fk)
+  --
+  cantidadDeComercios: int
+  cantidadDeSantuarios: int
+  tasaDeMortalidad: double
+}
+lugar ||--o| ciudad
+
+entity "Casa" as casa {
+  id: bigint
+  --
+  anioFundacion: int
+  nombre: varchar(255)
+  patrimonio: int
+  origen_id: bigint (fk)
+  vasallaDe_id: bigint (fk)
+}
+region }o-down-|| casa
+casa }o-|| lugar
+entity "Casa_FuerzaMilitar" as casa_fuerza {
+  Casa_id: bigint (fk)
+  FuerzasMilitares_id: bigint (fk)
+}
+entity "FuerzaMilitar (single table)" as fuerza {
+  id: bigint
+  --
+  tipo: varchar(1)
+  cantidadDragones: int
+  cantidadBarcos: int
+  cantidadSoldados: int
+}
+casa ||--o{ casa_fuerza
+casa_fuerza }o--|| fuerza
+
+@enduml
