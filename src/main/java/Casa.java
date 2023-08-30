@@ -8,7 +8,7 @@ import java.util.Collection;
 
 @Entity
 public class Casa {
-  
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -25,4 +25,5 @@ public class Casa {
   public String nombreLugarOrigen() {
     return origen.getNombre();
   }
+
 }

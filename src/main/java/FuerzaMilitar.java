@@ -17,13 +17,6 @@ public abstract class FuerzaMilitar {
 
   public abstract void atacarA(Lugar lugar);
 
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Long getId() {
-    return id;
-  }
 }
 
 
