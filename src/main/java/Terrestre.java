@@ -1,10 +1,12 @@
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("S")
+@DiscriminatorValue("T")
 public class Terrestre extends FuerzaMilitar {
 
+  @Column(name = "cantidad_recurso")
   private int cantidadSoldados;
 
   @Override
