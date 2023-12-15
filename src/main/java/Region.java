@@ -21,11 +21,11 @@ public class Region {
   @ManyToMany
   private Collection<Lugar> lugares;
 
-  public Set<Lugar> castillos() {
+  public Set<Lugar> getCastillos() {
     return lugares.stream().filter(Castillo.class::isInstance).collect(toSet());
   }
 
-  public Set<Lugar> ciudades() {
+  public Set<Lugar> getCiudades() {
     return lugares.stream().filter(Ciudad.class::isInstance).collect(toSet());
   }
 
